@@ -1,0 +1,183 @@
+<div class="container">
+    <h4 class="my-4"> ویرایش محاسبه پاداش ماهیانه </h4>
+    <form class="row g-3" [formGroup]="calculateForm">
+        <div class="col-md-8">
+          <label for="validationServer01" class="form-label"> عنوان </label>
+          <input type="text" 
+            class="form-control" 
+            [ngClass]="controls.title.invalid  ? 'is-invalid' : 'is-valid'"
+            formControlName="title"
+            id="validationServer01"
+            placeholder="عنوان را وارد کنید" required
+            >
+        </div>
+        <div class="col-md-4">
+            <label for="validationServer02" class="form-label"> سال پیشنهاد </label>
+            <select class="form-select"
+                formControlName="year" 
+                [ngClass]="controls.year.invalid  ? 'is-invalid' : 'is-valid'"
+                id="validationServer02" 
+                aria-describedby="validationServer02Feedback"
+                required>
+              <option selected disabled value="null"> یک آیتم را انتخاب کنید </option>
+              <option value="1404"> 1404 </option>
+              <option value="1403"> 1403 </option>
+              <option value="1402"> 1402 </option>
+              <option value="1401"> 1401 </option>
+              <option value="1400"> 1400 </option>
+            </select>
+        </div>
+        <div class="col-md-4">
+            <label for="validationServer03" class="form-label"> دسته </label>
+            <select class="form-select" 
+                formControlName="category" 
+                [ngClass]="controls.category.invalid  ? 'is-invalid' : 'is-valid'"
+                id="validationServer03"
+                aria-describedby="validationServer03Feedback"
+                required>
+              <option selected disabled value="null"> یک آیتم را انتخاب کنید </option>
+              <option value="project"> پروژه </option>
+              <option value="operations"> عملیات </option>
+            </select>
+        </div>
+        <div class="col-md-4">
+            <label for="validationServer04" class="form-label"> طرح </label>
+            <select class="form-select" id="validationServer04" 
+                formControlName="plan"
+                aria-describedby="validationServer04Feedback" 
+                required>
+              <option selected disabled value="null"> یک آیتم را انتخاب کنید </option>
+              <option value="govermental"> دولتی </option>
+              <option value="private"> خصوصی </option>
+            </select>
+        </div>
+        <div class="col-md-4">
+            <label for="validationServer05" class="form-label"> گروه پروژه و عملیات </label>
+            <select class="form-select" id="validationServer05"
+                formControlName="group"
+                aria-describedby="validationServer05Feedback" 
+                required>
+              <option selected disabled value="null"> یک آیتم را انتخاب کنید </option>
+              <option value="govermental"> دولتی </option>
+              <option value="private"> خصوصی </option>
+            </select>
+        </div>
+        <div class="col-md-4">
+            <label for="validationServer06" class="form-label"> نوع پروژه </label>
+            <select class="form-select" id="validationServer06"
+                formControlName="type"
+                [ngClass]="controls.type.invalid ? 'is-invalid' : 'is-valid'"
+                aria-describedby="validationServer06Feedback" 
+                required>
+              <option selected disabled value="null"> یک آیتم را انتخاب کنید </option>
+              <option value="govermental"> دولتی </option>
+              <option value="private"> خصوصی </option>
+              <option value="others"> سایر </option>
+            </select>
+        </div>
+        <div class="col-md-4">
+            <label for="validationServer07" class="form-label"> منطقه سازمان </label>
+            <select class="form-select" id="validationServer07" 
+                formControlName="zone"
+                [ngClass]="controls.zone.invalid ? 'is-invalid' : 'is-valid'"
+                aria-describedby="validationServer07Feedback" 
+                required>
+              <option selected disabled value="null"> یک آیتم را انتخاب کنید </option>
+              <option value="tehran"> تهران </option>
+              <option value="isfahan"> اصفهان </option>
+              <option value="mashhad"> مشهد </option>
+              <option value="sari"> ساری </option>
+            </select>
+        </div>
+        
+        <div class="col-md-4">
+            <label for="validationServer08" class="form-label"> سازمان مربوطه </label>
+            <select class="form-select" id="validationServer08" 
+                formControlName="organization"
+                aria-describedby="validationServer08Feedback" 
+                required>
+              <option selected disabled value="null"> یک آیتم را انتخاب کنید </option>
+              <option value="govermental"> دولتی </option>
+              <option value="private"> خصوصی </option>
+            </select>
+        </div>
+
+        <div class="col-md-4">
+            <label for="validationServer09" class="form-label"> متولی </label>
+            <select class="form-select" id="validationServer09" 
+                formControlName="responsible"
+                [ngClass]="controls.responsible.invalid ? 'is-invalid' : 'is-valid'"
+                aria-describedby="validationServer09Feedback" 
+                required>
+              <option selected disabled value="null"> یک آیتم را انتخاب کنید </option>
+              <option value="govermental"> دولتی </option>
+              <option value="private"> خصوصی </option>
+            </select>
+        </div>
+        <div class="col-md-4">
+            <label for="validationServer10" class="form-label"> بهره بردار </label>
+            <select class="form-select" id="validationServer10" 
+                formControlName="beneficiary"
+                aria-describedby="validationServer10Feedback" 
+                required>
+              <option selected disabled value="null"> یک آیتم را انتخاب کنید </option>
+              <option value="govermental"> دولتی </option>
+              <option value="private"> خصوصی </option>
+            </select>
+        </div>
+        <div class="col-md-4">
+            <label for="validationServer11" class="form-label"> ابعاد اجرایی </label>
+            <select class="form-select" id="validationServer11" 
+                formControlName="dimension"
+                [ngClass]="controls.dimension.invalid ? 'is-invalid' : 'is-valid'"
+                aria-describedby="validationServer11Feedback" 
+                required>
+              <option selected disabled value="null"> یک آیتم را انتخاب کنید </option>
+              <option value="govermental"> دولتی </option>
+              <option value="private"> خصوصی </option>
+            </select>
+        </div>
+
+        <div class="col-md-4">
+            <label for="validationServer12" class="form-label"> گروه بندی </label>
+            <select class="form-select" id="validationServer12" 
+                formControlName="grouping"
+                aria-describedby="validationServer12Feedback" 
+                required>
+              <option selected disabled value="null"> یک آیتم را انتخاب کنید </option>
+              <option> پروژه </option>
+              <option> عملیات </option>
+            </select>
+        </div>
+        <div class="col-md-4">
+            <label for="validationServer13" class="form-label"> روش اجرایی </label>
+            <select class="form-select" id="validationServer13" 
+                formControlName="path"
+                aria-describedby="validationServer13Feedback" 
+                required>
+              <option selected disabled value="null"> یک آیتم را انتخاب کنید </option>
+              <option value="contribute"> مشاکرتی </option>
+              <option value="ordinary"> عادی </option>
+              <option value="people"> مردمی </option>
+              <option value="govermental"> دولتی </option>
+            </select>
+        </div>
+        <div class="col-md-4">
+            <label for="validationServer14" class="form-label"> آخرین وضعیت </label>
+            <select class="form-select" id="validationServer14" 
+                formControlName="status"
+                aria-describedby="validationServer14Feedback" 
+                required>
+              <option selected disabled value="null"> یک آیتم را انتخاب کنید </option>
+              <option value="valid"> دردسترس </option>
+              <option value="invalid"> خارج از دسترس </option>
+            </select>
+        </div>
+        <div class="mb-3">
+            <label for="exampleFormControlTextarea1" class="form-label"> شرح کلان پروژه </label>
+            <textarea class="form-control" id="exampleFormControlTextarea1" 
+            formControlName="description"
+            rows="3"></textarea>
+        </div>
+    </form>
+</div>

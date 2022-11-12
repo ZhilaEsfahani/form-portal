@@ -1,0 +1,35 @@
+.nav-bar{
+    position: fixed;
+    /* padding: 8px; */
+    background-color: #E6F0FF;
+    border: 2px solid #589BFE;
+    border-radius: 32px;
+    left: 50%;
+    transform: translate(-50%, 0);
+    bottom: 24px;
+}
+.sub-text{
+    font-size: 12px;
+}
+.pointer{
+    cursor: pointer;
+}
+.box-width{
+    width: 113px;
+}
+.hidden{
+    visibility: hidden;
+    width: 0;
+    height: 0;
+    transition: all 0.1s;
+}
+.show{
+    visibility: visible;
+    width: 113px;
+    height: auto;
+    transition: all 0.1s;
+}
+.hover-color{
+    color: #0063FD !important;
+    transition: all 0.5s;
+}

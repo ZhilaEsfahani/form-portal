@@ -1,0 +1,56 @@
+.container{
+    overflow-y: scroll;
+}
+/* width */
+::-webkit-scrollbar {
+    width: 5px;
+  }
+  
+  /* Track */
+  ::-webkit-scrollbar-track {
+    background: #f1f1f1;
+  }
+  
+  /* Handle */
+  ::-webkit-scrollbar-thumb {
+    background: #888;
+    border-radius: 4px;
+  }
+  
+  /* Handle on hover */
+  ::-webkit-scrollbar-thumb:hover {
+    background: #555;
+  }
+.form-control{
+    background-position: left calc(.375em + .1875rem) center !important;
+}
+input,select{
+    padding-left: 0;
+    padding-right: 16px !important;
+    color: #495057 !important;
+    font-size: 14px !important;
+}
+.form-label{
+    color: #495057 !important;
+    font-size: 14px !important;
+}
+.form-select{
+    background-position:left 0.75rem center,center left 2.25rem !important;
+}
+@media screen and (min-width: 1200px) {
+    .container {
+        height: 89vh;
+
+    }
+}
+@media screen and (max-width: 591px) {
+    .container {
+        height: 67vh;
+
+    }
+}
+@media screen and (max-width: 1200px) and (min-width: 591px) {
+    .container {
+        height: 75vh;
+    }
+  }
